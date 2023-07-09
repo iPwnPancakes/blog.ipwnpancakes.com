@@ -1,0 +1,21 @@
+---
+import {useStoryblokApi} from '@storyblok/astro'
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Card from "../../components/Card.astro";
+
+const storyblokApi = useStoryblokApi()
+const {data} = await storyblokApi.get('cdn/stories', {
+    version: 'published'
+})
+
+const stories = data.stories.filter(story => story.content.component === 'post');
+console.log(stories)
+---
+
+<BaseLayout title="Welcome to Astro.">
+    {
+        stories.map(story =>
+            <Card title={story.name} body={''} href={story.slug} />
+        )
+    }
+</BaseLayout>
