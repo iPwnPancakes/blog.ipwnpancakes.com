@@ -32,9 +32,10 @@ const { data } = await storyblokApi.get(`cdn/stories/posts/${slug}`, {
 });
 
 const story = data.story;
-
 ---
 
-<BaseLayout>
-    <StoryblokComponent blok={story.content} />
+<BaseLayout title={story.content.title}>
+    <div class="prose lg:prose-xl md:prose-lg sm:prose-base mx-auto">
+        <StoryblokComponent blok={story.content} />
+    </div>
 </BaseLayout>

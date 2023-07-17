@@ -10,7 +10,16 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
 
-    <body class='container mx-auto'>
+    <body class='container bg-base-100 lg:w-2/3 sm:w-auto lg:mx-auto'>
+        <nav class="navbar bg-neutral text-neutral-content rounded-box justify-between mt-10 mb-10">
+            <a href="/" class="btn btn-ghost">Home</a>
+
+            <div>
+                <a href="/posts" class="btn btn-ghost">Posts</a>
+                <a href="/about" class="btn btn-ghost">About</a>
+            </div>
+        </nav>
+
         <slot />
     </body>
 </html>

@@ -21,6 +21,7 @@ export default defineConfig({
                 feature: 'storyblok/Feature',
                 grid: 'storyblok/Grid',
                 teaser: 'storyblok/Teaser',
+                textSection: 'storyblok/TextSection',
             }
         }),
         tailwind()

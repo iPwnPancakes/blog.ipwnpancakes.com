@@ -9,13 +9,12 @@ const {data} = await storyblokApi.get('cdn/stories', {
 })
 
 const stories = data.stories.filter(story => story.content.component === 'post');
-console.log(stories)
 ---
 
-<BaseLayout title="Welcome to Astro.">
+<BaseLayout title='Posts'>
     {
         stories.map(story =>
-            <Card title={story.name} body={''} href={story.slug} />
+            <Card title={story.name} body={story.content.shorttext} href={`posts/${story.slug}`} />
         )
     }
 </BaseLayout>
